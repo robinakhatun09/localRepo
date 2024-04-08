@@ -1,0 +1,270 @@
+﻿@model KendoDynamicGrid.Models.Student
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/jszip.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <button id="addButton" class="btn btn-primary">Add Student</button>
+    <div id="modal" class="modal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Add/Edit Student</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="StudentForm" data-ajax-success="Onajaxsuccess">
+                        <div class="form-group">
+                            <input type="number" hidden asp-for="Id" class="form-control" id="Id" >
+                            
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input class="form-control" id="Name" asp-for="Name">
+                            <span asp-validation-for="Name" id="usercheck" class="error-message"> </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email">Email</label>
+                            <input class="form-control" id="Email" asp-for="Email">
+                            <span asp-validation-for="Email" id="emailcheck" class="error-message"> </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Contact">Contact</label>
+                            <input class="form-control" id="Contact" asp-for="Contact">
+                            <span asp-validation-for="Contact" id="phonecheck" class="error-message"> </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Course">Course</label>
+                            <select class="form-control" id="Course" asp-for="Course">
+                                <option value="" selected disabled>Select course</option>
+                                <option value="Math">Math</option>
+                                <option value="Science">Science</option>
+                                <option value="History">History</option>
+                            </select>
+                            <span asp-validation-for="Course" id="coursecheck" class="error-message"> </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="City">City</label>
+                            <input class="form-control" id="City" asp-for="City">
+                        </div>                       
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <h3>Student Details</h3>
+    <div id="studentGrid"></div>
+    <script>
+        $(document).ready(function () {
+            $("#studentGrid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "/Student/Details",
+                            dataType: "json"
+                        },
+                        destroy: {
+                            url: "/Student/Delete",
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "id",
+                            fields: {
+                                name: { type: "string" },
+                                email: { type: "string" },
+                                contact: { type: "string" },
+                                course: { type: "string" },
+                                city: { type: "string" }
+                            }
+                        }
+                    },
+                    pageSize: 10
+                },
+                editable: "popup",
+                pageable: true,
+                toolbar: ["pdf", "excel", "search"],
+                columns: [
+                    { field: "name", title: "Name" },
+                    { field: "email", title: "Email", width: "220px", },
+                    { field: "contact", title: "Contact" },
+                    // { field: "course", title: "Course", template: "# if(course === 'Math') { # <div style='color: blue'>#: course #</div> # } else if(course === 'Science') { # <div style='color: green'>#: course #</div> # } else if(course === 'History') { # <div style='color: orange'>#: course #</div> # } #" },
+                    // {
+                    //     field: "course",
+                    //     title: "Course",
+                    //     template: "<div style='background-color: #: getCourseColor(course)#; '>#:course #</div>"
+                    // },
+
+                    { field: "course", title: "Course", attributes: getCourseColor},
+                    { field: "city", title: "City" },
+                    { command: ["destroy"] },
+                    { title: "Custom Edit", template: "<a class='k-button btn btn-warning editButton'>Edit</a>", }
+                ]
+                
+            });         
+            $("#addButton").click(function () {
+                $("#StudentForm")[0].reset();
+                $("#modalTitle").text("Add Student");
+                $("#modal").modal("show");
+            });
+            $(".close").click(function () {
+                $("#modal").modal("hide");
+            });
+
+            $(".btn-secondary").click(function () {
+                $("#modal").modal("hide");
+            });
+
+            $("#studentGrid").on("click", ".editButton", function () {
+                var dataItem = $("#studentGrid").data("kendoGrid").dataItem($(this).closest("tr"));
+                $("#Id").val(dataItem.id);
+                $("#Name").val(dataItem.name);
+                $("#Email").val(dataItem.email);
+                $("#Contact").val(dataItem.contact);
+                $("#Course").val(dataItem.course);
+                $("#City").val(dataItem.city);
+                $("#modalTitle").text("Edit Student");
+                $("#modal").modal("show");
+            });
+            $("#saveButton").click(function () {
+                debugger;
+                    var formData = $("#StudentForm").serialize();
+                    var edit = $("#StudentForm #Id").val() == "";
+                    var url = edit ? "/Student/Create/" : "/Student/Edit/";
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: formData,
+                        success: function (data) {
+                            if (data.success) {
+                                alert(data.error);
+                                $("#modal").modal("hide");
+
+                                $("#studentGrid").data("kendoGrid").dataSource.read();
+                            }
+                            else {
+                                alert(data.error);
+                            }
+                            
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+            });
+        });
+        let getCourseColor = (data) => {
+            var color;
+            if (data.course === "Math") {
+                color = "lightblue";
+            } else if (data.course === "Science") {
+                color = "lightgray";
+            } else if (data.course === "History") {
+                color = "lightpink";
+            } else {
+                color = "Red";
+            }
+            return { style: `background-color: ${color}` };
+        }
+        // function getCourseColor(course) {
+        //     switch (course) {
+        //         case "Math":
+        //             return "lightblue";
+        //         case "Science":
+        //             return "lightgray";
+        //         case "History":
+        //             return "lightpink";
+
+        //     }
+        // }
+        function Onajaxsuccess(result) {
+            if (result.success) {
+                alert("data inserted successfully");
+            }
+            else {
+                alert(result.error);
+            }
+        }
+       
+        function validateForm() {
+            var valu = true;
+            var name = $("#Name").val();
+            var e_mail = $("#Email").val();
+            var contact = $("#Contact").val();
+            var course = $("#Course").val();
+
+            if (name === "") {
+                $("#usercheck").text("**** Please fill in the name");
+                valu = false;
+            } else if (!/^[a-zA-Z]+$/.test(name)) {
+                $("#usercheck").text("**** Name should contain only letters");
+                valu = false;
+            } else {
+                $("#usercheck").text("");
+            }
+            var email_exp = /^\S+@@\S+\.\S+$/;
+            if ($("#Email").val().match(email_exp)) {
+                $("#emailcheck").text("");
+            }
+            else if ($("#Email").val() == "") {
+                $("#emailcheck").text("****Please fill email");
+                valu = false;
+            }
+            else {
+                $("#emailcheck").text("****Invalid Email");
+                valu = false;
+            }
+            if ($("#Contact").val() == "") {
+                $("#phonecheck").text("****Please fill Number");
+                valu = false;
+            }
+
+            else if ($("#Contact").val().length != 10) {
+                $("#phonecheck").text("****Invalid Contact");
+                valu = false;
+            }
+            else {
+                $("#phonecheck").text("");
+            }
+            if (course == null || course === "") {
+                $("#coursecheck").text("****please select course");
+                valu = false;
+            } else {
+                $("#coursecheck").text("");
+            }
+            return valu;
+        }
+        $("#saveButton").click(function () {
+            validateForm();
+        });
+    </script>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+    <style>
+        h3 {
+            text-align: center;
+            background-color: antiquewhite;
+            height: 50px;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</body>
+</html>

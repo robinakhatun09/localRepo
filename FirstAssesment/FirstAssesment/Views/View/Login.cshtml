@@ -1,0 +1,78 @@
+﻿@model FirstAssesment.Models.Login
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Login and Registration Page</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="row mb-4">
+                    <div class="col-md-6 order-md-1">
+                        <img src="https://static.wixstatic.com/media/57b89c_a9150f77db504fb68fa01349ccac1a78~mv2.png/v1/fit/w_320%2Ch_1000%2Cal_c,enc_auto/file.png" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 order-md-2">
+                        <h2 class="mb-4">Login</h2>
+                        <form method="post" asp-controller="View" asp-action="Login">
+                            <div class="form-floating">
+                                <input type="text" asp-for="Username" class="form-control" id="username">
+                                <label asp-for="Username">Username</label>
+                            </div>
+                            <div class="form-floating">
+
+                                <input type="password" asp-for="Password" class="form-control" id="loginPassword" placeholder="Enter your password">
+                                <label asp-for="Password">Password</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-4" value="submit">Login</button>
+                           
+                        </form>
+                        <p class="mt-3">Don't have an account yet? <a href="/View/Register">Register now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        input[type="email"], input[type="password"] {
+            background: transparent;
+            border: black;
+            border-bottom: 1px solid #fff;
+            border-radius: 0;
+            color: black;
+            box-shadow: none;
+        }
+
+            input[type="email"]:focus, input[type="password"]:focus {
+                background: transparent;
+                border-bottom: 1px solid #FAEBD7;
+                border-radius: 0;
+                outline: none;
+                color: black;
+                box-shadow: none;
+            }
+
+        .img-fluid {
+            height: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            background: burlywood;
+        }
+
+        body {
+            background-color: antiquewhite;
+            background-image: url('https://wallpapers.com/images/hd/jewellery-background-2000-x-2000-xinfovukq7ve3lh3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+</body>
+</html>

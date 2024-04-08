@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+
+<body>
+   
+    <div id="container">
+    <div id="Form" >
+            <input id="picker" />
+        <div class="section">
+        
+            <div id="validation"></div>
+
+            <form id="form"></form>
+            
+        </div>
+        </div>
+
+    </div>
+    
+    <script>
+        
+       
+            
+            $(document).ready(function () {
+
+            var validationSuccess = $("#validation");
+            
+                function colorDemo(colorEvent) {
+                    let color = colorEvent.value;
+                    document.getElementById("colormain").style.backgroundColor = color;
+
+                }
+            
+           
+
+                $("#picker").kendoColorPicker({
+                    value:"#ff5",
+                    change:colorDemo
+                });
+            
+            $("#form").kendoForm({
+                    
+                    formData: {
+                        Fullname: "",                       
+                        Email: "",
+                        Password: "",
+                        Confirmpassword: "",
+                        Birth: new Date(),
+                        Gender: "",
+                        City: "",
+                        description:"",
+                        Agree:false,
+                    
+                    },
+                   
+                    items: [{
+                        type: "group",
+                        label: "Registration Form",
+                        items: [
+                            { field: "Fullname", label: "Full name:", validation: { required: true} },
+                            { field: "Email", label: "Email:", validation: { required: true, email: true } },
+                            { field: "Password", label: "Password:", validation: { required: true }, },
+                            { field: "Confirmpassword", lable: "Confirmpassword:", validation: { required: true } },
+                            { field: "Birth", label: "Date of birth:" , editorOption:{placeholder:"date enter"} },
+                            { field: "Gender",editor: "RadioGroup",label: "Gender:",validation: { required: true },
+                                editorOptions: {
+                                    items: ["Male", "Female", "Other"],
+                                    layout: "horizontal",
+                                    labelPosition: "before"
+                                }
+                            },
+                            {
+                                field: "City",
+                                editor: "DropDownList",
+                                label: "City",
+                                validation: { required: true },
+                                colSpan: 1,
+                                editorOptions: {
+                                    optionLabel: "Select...",
+                                    dataSource: [
+                                        { Name: "Mumbai", Id: 1 },
+                                        { Name: "Delhi", Id: 2 },
+                                        { Name: "Nagpur", Id: 3 },
+                                        { Name: "Jablapur", Id: 4 },
+                                        { Name: "Ahmedabad", Id: 5 },
+                                        { Name: "Hyderabad", Id: 6 },
+                                        { Name: "Chennai", Id: 7 },
+                                        { Name: "Kolkata", Id: 8 },
+                                                                
+                                    ],
+                                    dataTextField: "Name",
+                                    dataValueField: "Id"
+                                }
+                            },
+                        
+ 
+                            {field: "description", label: "Description:", editor: "TextArea", editorOptions: { rows: 5 }},
+                            { field: "Agree", label: "Agree to Terms:", validation: { required: true } }
+                        ]
+                    }],
+                    validateField: function (e) {
+                        validationSuccess.html("");
+                    },
+                    submit: function (e) {
+                        e.preventDefault();
+                        validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+                    },
+                    clear: function (ev) {
+                        validationSuccess.html("");
+                    }
+               
+                });
+            });
+        </script>
+
+
+    <style>
+    .k-form .k-form-legend {
+    font-size: 44px;
+    text-align: center;
+    }
+   
+   
+
+    </style>
+
+
+</body>
+

@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\bin\Debug\net6.0\BuisnessLayer.deps.json
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\bin\Debug\net6.0\BuisnessLayer.dll
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\bin\Debug\net6.0\BuisnessLayer.pdb
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.AssemblyInfo.cs
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.dll
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\refint\BuisnessLayer.dll
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.pdb
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\ref\BuisnessLayer.dll
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\bin\Debug\net6.0\BuisnessLayer.runtimeconfig.json
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.csproj.AssemblyReference.cache
+C:\Users\rubin\source\repos\presentationLayer\BuisnessLayer\obj\Debug\net6.0\BuisnessLayer.genruntimeconfig.cache

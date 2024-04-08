@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AgGridDynamic.Models.User>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+</head>
+<body>
+    <h1 class="text-primary">User Record</h1>
+    <a class="btn btn-sm btn-success m-1 text-center" asp-controller="Userlist" asp-action="Create">Create</a>
+    <button class="btn btn-sm btn-danger m-1 text-center" onclick="deleteSelectedRows()">Delete Rows</button>
+    <div id="myGrid" class="ag-theme-balham" style="width: 600px; height: 500px;"></div>
+    
+    <script>
+        const gridOptions = {
+            rowData: @Html.Raw(Json.Serialize(Model)),
+            columnDefs: [
+                { field: "name" },
+                { field: "email" },
+                { field: "city" },   
+                        
+            ],
+            defaultColDef: { 
+                sortable: true, 
+                filter: true,
+                editable: true
+            },
+            onCellValueChanged: function (params) {
+                $.ajax({
+                    url: "/Userlist/Edit",
+                    type: 'POST',
+                    data: params.data
+                });
+            },
+            rowSelection: 'multiple',
+            pagination: true
+        };
+        
+        new agGrid.Grid(document.querySelector('#myGrid'), gridOptions);
+       
+        function deleteSelectedRows() {
+            const selectedRows = gridOptions.api.getSelectedRows();
+            const id = selectedRows[0].id;
+           
+                $.ajax({
+                    url: '/Userlist/Delete/' + id,
+                    type: "GET",
+                    success: function (response) {
+                        location.reload();
+                    }
+
+                });
+            
+           
+            
+        }
+            
+        
+           
+        
+    </script>
+</body>
+
+

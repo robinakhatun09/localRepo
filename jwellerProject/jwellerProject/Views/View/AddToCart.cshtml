@@ -1,0 +1,96 @@
+﻿@section headcss {
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        table {
+            width: 100%;
+            height: 300px;
+        }
+
+        thead {
+            background: green;
+            color: white;
+        }
+
+       
+    </style>
+}
+
+<h1 class="text-center">Shopping Card</h1>
+<br />
+<br />
+<div class="cart-body"></div>
+<br />
+<div>
+    <button type="button" class="btn btn-secondary btn-lg" id="GenerateBill" onclick="window.print()">AutoGenerateBill</button>
+</div>
+
+<script>
+    function updatecart() {
+
+        let cartString = localStorage.getItem("cart");
+        let cart = JSON.parse(cartString);
+
+        if (cart == null || cart.length == 0) {
+
+            $(".cart-items").html("( 0 )");
+            $(".cart-body").html("<h3>Cart has no items </h3>");
+
+        } else {
+
+            $(".cart-items").html((${ cart.length }));
+
+            let table = `<table>
+                                <thead>
+                                    <tr>
+                                        <th id="my_id">ID</th>
+                                        <th>Item Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                             </thead>`;
+
+            let totalPrice = 0;
+            cart.map((item) => {
+
+                table += `<tr>
+                                  <td > ${item.proId} </td>
+                                  <td> ${item.proName} </td>
+                                  <td> ${item.price} </td>
+                                  <td> ${item.Quantity} </td>
+                                  <td> ${(item.Quantity * item.price).toString()} </td>
+                                  <td> <button onclick="deleteItemFromCart(${item.proId})" class="btn btn-danger btn-sm">Remove</button> </td>
+                              </tr>`
+
+                totalPrice += item.price * item.Quantity;
+            })
+
+            table = table +
+
+                ` <tr >
+                             <td colspan='5' class='text-right' > TotalPrice :  ${totalPrice.toString()}</td>
+                        </tr>
+                        </table>`
+            $(".cart-body").html(table);
+        }
+
+    }
+
+    function deleteItemFromCart(prodId) {
+        let cart = JSON.parse(localStorage.getItem('cart'));
+        let newcart = cart.filter((item) => item.proId != prodId)
+        localStorage.setItem('cart', JSON.stringify(newcart))
+
+        updatecart();
+    }
+
+    $(document).ready(function () {
+        updatecart()
+    })
+
+
+</script>

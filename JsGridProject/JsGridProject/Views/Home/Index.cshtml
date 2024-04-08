@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+    
+</head>
+<body>
+    <div id="jsGrid"></div>
+
+    <script>
+        var Employees = [
+            { "Name": "Robina khatun", "Email": "rk@gmail.com", "Contact": "1234567890", "City": "bhopal" },
+            { "Name": "Rubi Ansari", "Email": "ra@gmail.com", "Contact": "6268922067", "City": "chhindwara"},
+            { "Name": "Farhan Ansari", "Email": "Fa@gmail.com", "Contact": "8956782346", "City": "Indore" },
+            { "Name": "Rehan Ansari", "Email": "rA@gmail.com", "Contact": "7891234569", "City": "bhopal" },
+            { "Name": "kumar Shivam", "Email": "k@gmail.com", "Contact": "9898764569", "City": "bhopal" },
+            { "Name": "Satyam", "Email": "s@gmail.com", "Contact": "7891234569", "City": "bhopal" },
+            { "Name": "Abhijit", "Email": "A@gmail.com", "Contact": "8665845699", "City": "Indore" },
+            { "Name": "Radha", "Email": "r@gmail.com", "Contact": "3455234569", "City": "Delhi" },
+            { "Name": "Govind", "Email": "A@gmail.com", "Contact": "7891236789", "City": "Mumbai" },
+            { "Name": "Rani", "Email": "rA@gmail.com", "Contact": "7895674569", "City": "bhopal" },
+            { "Name": "Ishan", "Email": "Ishan@gmail.com", "Contact": "7891678923", "City": "bhopal" },
+            { "Name": "Kapil", "Email": "K@gmail.com", "Contact": "7890986549", "City": "bhopal" },
+            
+        ];
+
+
+        $("#jsGrid").jsGrid({
+            width: "100%",
+            height: "400px",
+            editing: true,
+            sorting: true,
+            inserting:true,
+            paging:true,
+            pageSize: 8,
+            data: Employees,
+            fields: [
+                { name: "Name", type: "text", width: 150, },
+                { name: "Email", type: "text", width: 50 },
+                { name: "Contact", type: "number", width: 50, align: "center", },
+                { name: "City", type: "text"  },
+                { type: "control" }
+                
+            ]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FlightTicketBooking.Models.Flight>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+</head>
+<body>
+
+    <h1 class="text-dark text-lg-center">Flight Details</h1>
+    <div id="myGrid" class="ag-theme-quartz"></div>
+    <script>
+
+        const gridOptions = {
+            columnDefs: [
+                { field: "flightNumber" },
+                { field: "departureCity" },
+                { field: "arrivalCity" },
+                { field: "departureTime" },
+                { field: "arrivalTime" },
+                { field: "price" },
+                {
+                    headerName: "Book Now",
+                    cellRenderer: function (params) {
+                        return '<button onclick="bookNowClicked(' + params.data.flightId + ')">Book Now</button>';
+                    }
+                }
+            ],
+            defaultColDef: {
+                sortable: true,
+                filter: true,
+                editable: true
+            }
+        };
+        function bookNowClicked(flightId) {          
+                window.location.href = '/FlightTickect/BookNow?flightId=' + flightId;         
+        }
+        
+        // function bookNowClicked(flightId) {
+        //     if (isUserLoggedIn()) {
+        //         window.location.href = '/FlightTickect/BookNow?flightId=' + flightId;
+        //     } else {
+        //         window.location.href = '/FlightTickect/Login';
+        //     }
+        // }
+        // function isUserLoggedIn() {
+
+        //     return false;
+        // }
+        var loc= localStorage.getItem("location");
+         loc = loc.split(" ");
+        var url = '/FlightTickect/SearchFlights/?Departure=' + loc[0] + '&Arrival=' + loc[1];
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+               
+                gridOptions.api.setRowData(data);
+            })
+            .catch(error => console.error('Error fetching flight data:'));
+
+        new agGrid.Grid(document.querySelector('#myGrid'), gridOptions);
+
+    </script>
+    <style>
+        #myGrid {
+            width: 85%;
+            height: 500px;
+            margin: auto;
+        }
+
+        .total-section {
+            text-align: center;
+        }
+
+        .ag-theme-quartz {
+            --ag-header-height: 30px;
+            --ag-header-foreground-color: white;
+            --ag-header-background-color: black;
+            --ag-row-border-style: dashed;
+            --ag-row-border-width: 5px;
+            --ag-row-border-color: rgb(150, 150, 200);
+        }
+    </style>
+
+</body>

@@ -1,0 +1,30 @@
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\appsettings.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.staticwebassets.runtime.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.exe
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.deps.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.runtimeconfig.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.dll
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration form.pdb
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.AssemblyInfo.cs
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.RazorAssemblyInfo.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.RazorAssemblyInfo.cs
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.registration form.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.build.registration form.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.registration form.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.registration form.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\bundle\registration form.styles.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\projectbundle\registration form.bundle.scp.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.dll
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\refint\registration form.dll
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.pdb
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration form.genruntimeconfig.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\ref\registration form.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\registration _form _JQ.props" />
+</Project>

@@ -1,0 +1,50 @@
+﻿<html lang="en">
+<head>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+</head>
+<body>
+    
+   
+    <div id="Grid" class="ag-theme-quartz-dark" style="height: 300px"></div>
+   <script>
+       
+       
+    const gridOptions = {
+    rowData: [
+    { mission: "Voyager", company: "ISRO", location: "Cape Canaveral", date: "1977-09-05", rocket: "Titan-Centaur ", price: 86580000, successful: true },
+    { mission: "Apollo 13", company: "NASA", location: "Kennedy Space Center", date: "1970-04-11", rocket: "Saturn V", price: 3750000, successful: false },
+    { mission: "Falcon 9", company: "SpaceX", location: "Cape Canaveral", date: "2015-12-22", rocket: "Falcon 9", price: 9750000, successful: true },
+
+    ],
+    
+    
+    columnDefs: [
+    { field: "mission" },
+    { field: "company"},
+    { field: "location" },
+    { field: "date" },
+    { field: "price",
+        valueFormatter: ' "$" +value.toLocaleString()'        
+    },
+    { field: "successful" },
+    { field: "rocket" },
+    ],
+       
+    defaultColDef: {
+                filter: true,
+                editable: true,
+            },
+        rowSelection: 'multiple',
+        pagination: true,
+        
+            
+   };
+
+   
+    const myGridEmt = document.querySelector('#Grid');
+    agGrid.createGrid(myGridEmt, gridOptions);
+        
+    </script>
+</body>
+</html>

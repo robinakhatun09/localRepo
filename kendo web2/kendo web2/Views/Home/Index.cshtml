@@ -1,0 +1,220 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<base href="https://demos.telerik.com/kendo-ui/signature/index">
+<link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+
+
+<body>
+    <div id="container">
+        <input id="picker" />
+
+        <div id="form">
+            <h1>Ragistration Form</h1>
+        </div>
+        <input id="Name" />
+        <input id="Email" />
+        <input id="Number" />
+        <lable>Birth Date</lable>
+        <input id="date" />
+        <lable>which country are you a citizen?</lable>
+        <input id="city" />
+        <div id="radiogroup">
+            <lable>Gender:</lable>
+        </div>
+        <div id="selectAllCheckbox">
+            <label>Course :</label>
+        </div>
+        <div id="textsize">
+            <lable>About me</lable>
+            <textarea id="textarea"></textarea>
+        </div>
+        <input id="password" />
+        <input id="confpassword" />
+      
+        <input id="checkbox" />
+        <div class="submit-button">
+            <button>submit</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            //colorpickerforbackgroundvhange
+            function colorDemo(colorEvent) {
+                let color = colorEvent.value;
+                document.getElementById("color").style.backgroundColor = color;
+
+            }
+            $("#picker").kendoColorPicker({
+                value: "black",
+                change: colorDemo
+            });
+            //addfullname
+            $("#Name").kendoTextBox({
+                label: "Name",
+                placeholder: "Enter full name......",
+
+
+
+            });
+            //addemail
+            $("#Email").kendoTextBox({
+                label: "Email",
+                placeholder: "Enter email......",
+
+            });
+            //addphonenumber
+            $("#Number").kendoTextBox({
+                label: "Phone Number",
+                placeholder: "Enter Number......"
+
+            });
+            //datepiker
+            $("#date").kendoDatePicker({
+                dateInput: true
+            });
+            //citydata,datasourse
+            var dataSource = new kendo.data.DataSource({
+                data: [
+                    { CityID: 1, CityName: "Lisboa" },
+                    { CityID: 2, CityName: "Moscow" },
+                    { CityID: 3, CityName: "Napoli" },
+                    { CityID: 4, CityName: "Tokyo" },
+                    { CityID: 5, CityName: "Oslo" },
+                    { CityID: 6, CityName: "Pаris" },
+                    { CityID: 7, CityName: "India" },
+                    { CityID: 8, CityName: "Rome" },
+                    { CityID: 9, CityName: "Berlin" },
+                    { CityID: 10, CityName: "Nice" },
+                    { CityID: 11, CityName: "New York" },
+                    { CityID: 12, CityName: "Sao Paulo" },
+                    { CityID: 13, CityName: "Rio De Janeiro" },
+                    { CityID: 14, CityName: "Venice" },
+                    { CityID: 15, CityName: "Los Angeles" },
+                    { CityID: 16, CityName: "Madrid" },
+                    { CityID: 17, CityName: "Barcelona" },
+                    { CityID: 18, CityName: "Prague" },
+                    { CityID: 19, CityName: "Mexico City" },
+                    { CityID: 20, CityName: "Buenos Aires" }
+                ],
+                sort: { field: "CityName", dir: "asc" }
+            });
+
+
+            $("#city").kendoDropDownList({
+
+                filter: "contains",
+                optionLabel: 'Please select city...',
+                dataTextField: "CityName",
+                dataValueField: "CityID",
+                dataSource: dataSource
+            });
+
+            //checkboxforcourses
+            $("#selectAllCheckbox").kendoCheckBoxGroup({
+                items: ["UI/UX Design", "Web Designing", "Machine Learning"],
+                layout: "vertical",
+
+            });
+            //radiobuttonforgender
+            $("#radiogroup").kendoRadioGroup({
+                items: ["Male", "Female", "Other"],
+                layout: "vertical"
+
+            });
+            //datasoursefordropdowntree
+            var dataSource = new kendo.data.HierarchicalDataSource({
+                sort: { field: "cityName", dir: "asc" },
+                data: [
+                    {
+                        cityId: 1, cityName: "India", items: [
+                            { cityId: 2, cityName: "Bhopal" },
+                            { cityId: 3, cityName: "Mumbai" },
+                            { cityId: 4, cityName: "Delhi" }
+                        ]
+                    },
+                    {
+                        cityId: 5, cityName: "France", items: [
+                            { cityId: 6, cityName: "Nice" },
+                            { cityId: 7, cityName: "Paris" },
+                            { cityId: 8, cityName: "Marseille" }
+                        ]
+                    },
+                    {
+                        cityId: 9, cityName: "Portugal", items: [
+                            { cityId: 10, cityName: "Porto" },
+                            { cityId: 11, cityName: "Lisbon" },
+                            { cityId: 12, cityName: "Braga" }
+                        ]
+                    },
+                    {
+                        cityId: 13, cityName: "Brazil", items: [
+                            { cityId: 14, cityName: "Rio De Janeiro" },
+                            { cityId: 15, cityName: "Sao Paulo" }
+                        ]
+                    },
+                    {
+                        cityId: 16, cityName: "USA", items: [
+                            { cityId: 18, cityName: "New York" },
+                            { cityId: 19, cityName: "Atlanta" },
+                            { cityId: 20, cityName: "Los Angeles" }
+                        ]
+                    }
+                ]
+            });
+
+            //dropdowntree
+            $("#kd-place-chooser").kendoDropDownTree({
+                placeholder: "Please select city or country ...",
+                height: "auto",
+                dataSource: dataSource,
+                dataValueField: "cityId",
+                dataTextField: "cityName",
+            });
+            //textarea
+            $("#textarea").kendoTextArea({
+                rows: 4,
+                maxLength: 200,
+                placeholder: "Tell us a little bit about yourself..."
+            });
+
+            //passwordcheckbox
+            $("#password").kendoTextBox({
+                label: "password",
+                placeholder: "Enter password......"
+            });
+            $("#confpassword").kendoTextBox({
+                label: "confirmpassword",
+                placeholder: "Enter Confirmpassword......"
+
+            });
+           
+            $('#checkbox').kendoCheckBox({
+                label: "Agree to Terms:"
+            });
+            $('#button').kendoButton({
+                type: "submit"
+            });
+
+
+        });
+    </script>
+    <style>
+        #form {
+            text-align: center;
+        }
+
+        #radiogroup,
+        #selectAllCheckbox {
+            width: 50%;
+            float: left;
+        }
+       
+    </style>
+
+</body>

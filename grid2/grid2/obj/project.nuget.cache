@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "2qe/RIpipLP8Nvg1ujdJj3tKMKhEcO9M4RQVDHAQZ7i3CGTWnxeJDJkHNVvWGM3hCHboB1/+KMIyDZ8O6brXTQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rubin\\source\\repos\\grid2\\grid2\\grid2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}

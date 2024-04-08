@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\marksheet1\marksheet1\bin\Debug\net6.0\marksheet1.exe
+C:\Users\rubin\source\repos\marksheet1\marksheet1\bin\Debug\net6.0\marksheet1.deps.json
+C:\Users\rubin\source\repos\marksheet1\marksheet1\bin\Debug\net6.0\marksheet1.runtimeconfig.json
+C:\Users\rubin\source\repos\marksheet1\marksheet1\bin\Debug\net6.0\marksheet1.dll
+C:\Users\rubin\source\repos\marksheet1\marksheet1\bin\Debug\net6.0\marksheet1.pdb
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.AssemblyInfo.cs
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.dll
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\refint\marksheet1.dll
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.pdb
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\marksheet1.genruntimeconfig.cache
+C:\Users\rubin\source\repos\marksheet1\marksheet1\obj\Debug\net6.0\ref\marksheet1.dll

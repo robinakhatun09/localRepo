@@ -1,0 +1,101 @@
+﻿@model FlightTicketBooking.Models.Booking;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Flight Ticket</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .ticket {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .flight-info {
+            margin-bottom: 20px;
+        }
+
+        .passenger-info {
+            border-top: 1px solid #dee2e6;
+            padding-top: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+            border-radius: 0 0 10px 10px;
+        }
+
+      
+        .icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #007bff;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .icon:hover {
+                transform: rotate(360deg);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="ticket">
+            <div class="header">
+                <h3>Flight Ticket</h3>
+            </div>
+
+            <div class="flight-info">
+                <p>Flight Number:</p>
+                <p>Departure City: </p>
+                <p>Arrival City: </p>
+                
+            </div>
+            <div class="passenger-info">
+                <h4>Passenger Information</h4>
+                <p><strong>Name:</strong></p>
+                <p><strong>Seat:</strong> </p>
+                <p><strong>Gate:</strong> </p>
+            </div>
+
+            <div class="footer">
+                <p>Thank you for choosing our airline!</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+ 

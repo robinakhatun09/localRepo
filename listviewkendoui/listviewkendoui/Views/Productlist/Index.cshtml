@@ -1,0 +1,32 @@
+﻿@model List<listviewkendoui.Models.BeautyProduct>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">BeautyProductlist</h1>
+            <a class="btn btn-sm btn-success m-1" asp-controller="Productlist" asp-action="Insert">Create Record</a>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>ProductId</th>
+                    <th>Name</th>
+                    
+                    <th>Image</th>
+
+                </tr>
+                @foreach (var d in Model)
+                {
+                    <tr class="text-center">
+                        <td>@d.Id</td>
+                        <td>@d.Name</td>
+                        <td><img src="data:image/jpg;base64,@Convert.ToBase64String(d.Image)" height="80" width="100"></td>
+
+                        <td>
+                            <a class="btn-primary btn-sm btn-warning" asp-controller="Productlist" asp-action="Edit" asp-route-id="@d.Id">Edit</a>
+                            <a class="btn-primary btn-sm btn-danger" asp-controller="Productlist" asp-action="Delete" asp-route-id="@d.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+

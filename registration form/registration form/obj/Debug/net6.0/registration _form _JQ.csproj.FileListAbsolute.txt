@@ -1,0 +1,30 @@
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\appsettings.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.staticwebassets.runtime.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.exe
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.deps.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.runtimeconfig.json
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.dll
+C:\Users\rubin\source\repos\registration form\registration form\bin\Debug\net6.0\registration _form _JQ.pdb
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.AssemblyInfo.cs
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.RazorAssemblyInfo.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.RazorAssemblyInfo.cs
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.registration _form _JQ.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.build.registration _form _JQ.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.registration _form _JQ.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.registration _form _JQ.props
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\bundle\registration _form _JQ.styles.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\scopedcss\projectbundle\registration _form _JQ.bundle.scp.css
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.dll
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\refint\registration _form _JQ.dll
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.pdb
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\registration _form _JQ.genruntimeconfig.cache
+C:\Users\rubin\source\repos\registration form\registration form\obj\Debug\net6.0\ref\registration _form _JQ.dll

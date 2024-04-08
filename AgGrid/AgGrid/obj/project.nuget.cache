@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "tq0vEpu891atJAYurE991POtNpo7qwpZGR0+OzhHWkKTnx2/z7r546v2+PPpNx8u5py6wpCNno5WlVGu9rJ5Yg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rubin\\source\\repos\\AgGrid\\AgGrid\\AgGrid.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.28\\microsoft.netcore.app.host.win-x64.6.0.28.nupkg.sha512"
+  ],
+  "logs": []
+}

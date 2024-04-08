@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FirstAssesment.Models.Cart>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+</head>
+<body>
+
+    <h1 class="text-dark text-lg-center">Bill</h1>
+    <div id="myGrid" class="ag-theme-balham "></div>
+    <div class="total-section">
+        <p>Total Price: @ViewBag.TotalPrice.ToString("c")</p>
+    </div>
+    <script>
+        
+        const gridOptions = {
+            rowData: @Html.Raw(Json.Serialize(Model)),
+            columnDefs: [
+                { field: "name" },
+                { field: "price" },
+
+
+            ],
+            defaultColDef: {
+                sortable: true,
+                filter: true,
+                editable: true
+            }
+        };       
+        new agGrid.Grid(document.querySelector('#myGrid'), gridOptions);
+        
+    </script>
+    <style>
+        #myGrid {
+            width: 380px;
+            height: 400px;
+            margin: auto;
+        }
+
+        .total-section {
+            text-align: center;
+        }
+        
+    </style>
+
+</body>

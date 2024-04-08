@@ -1,0 +1,37 @@
+﻿@model Entityframeworks.Models.Employee
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="crad-header">
+                    <h1 class="text-center text-primary">Edit Employee</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Edit" asp-controller="Employes">
+                       
+                        <div class="form-group mt-3">
+                            <lable asp-for="Name">Name</lable>
+                            <input type="hidden" asp-for="Id"/>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Enter Name" />
+                        </div>
+                        <div class="form-group mt-3 ">
+                            <lable asp-for="Email">Email</lable>
+                            <input type="text" asp-for="Email" class="form-control" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <lable asp-for="Age">Age</lable>
+                            <input type="text" asp-for="Age" class="form-control" placeholder="Enter Age" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <lable asp-for="Address">Address</lable>
+                            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

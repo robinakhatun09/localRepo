@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\bin\Debug\net6.0\Linq_demo.exe
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\bin\Debug\net6.0\Linq_demo.deps.json
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\bin\Debug\net6.0\Linq_demo.runtimeconfig.json
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\bin\Debug\net6.0\Linq_demo.dll
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\bin\Debug\net6.0\Linq_demo.pdb
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.AssemblyInfo.cs
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.dll
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\refint\Linq_demo.dll
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.pdb
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\Linq_demo.genruntimeconfig.cache
+C:\Users\rubin\source\repos\Linq_demo\Linq_demo\obj\Debug\net6.0\ref\Linq_demo.dll

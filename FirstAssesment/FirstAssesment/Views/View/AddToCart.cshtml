@@ -1,0 +1,131 @@
+﻿@model IEnumerable<FirstAssesment.Models.Cart>
+
+<head>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-ocean-blue.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/cultures/kendo.culture.en-IN.min.js"></script>
+</head>
+<body>
+    <div id="cartListView">
+    </div>   
+    <div class="card-text"><span id="cartTotal"></span></div>
+    <div class="buy-now-section">
+        <a class="k-button k-button-solid-base k-button-solid k-delete-button" href="\View\Bill\" onclick="buyNow()" style="font-size: 24px;">BUY NOW</a>
+    </div>
+    <script type="text/kendo-x-tmpl" id="template">
+        <div class="Shop" style="border:2px solid">
+            <img src="data:image/*;base64,#:image#" height="50" width="50"></img>
+            <div class="col-6" id="box">
+                <h3>#:name#</h3>
+                <p>#:kendo.toString(price, "c")# </p>
+                <a class="k-button k-button-solid-base k-button-solid k-delete-button" href="\View\Delete\" onclick="deleteCartItem(#:id#, #:price#)" style="font-size: 24px;">REMOVE</a>
+            </div>            
+        </div>
+    </script>
+    <script>
+        let cartTotal = 0;
+        function updateCartTotal() {
+            $("#cartTotal").text("Cart Total: " + kendo.toString(cartTotal, "c"));
+        };
+
+        kendo.culture("en-IN");
+        $("#cartListView").kendoListView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/View/Add/",
+                        dataType: "json"
+                    }
+                }
+                
+            },
+            schema: {
+                model: {
+                    id: "id",
+                    fields: {
+                        id: { type: "number" },
+                        name: { type: "string" },
+                        price: { type: "number" },
+                        image: { type: "byte[]" }
+                    }
+                }
+            },
+            template: kendo.template($("#template").html()),
+            dataBound: function (e) {
+                calculateTotalPrice(e.sender);
+            }
+
+        });
+       
+        function calculateTotalPrice(listView) {
+            var dataSource = listView.dataSource;
+            var total = 0;
+
+            dataSource.data().forEach(function (item) {
+                total += item.price;
+            });
+
+            cartTotal = total;
+            updateCartTotal();
+        }
+
+        function deleteCartItem(itemId, itemPrice) {
+            $.ajax({
+                type: "POST",
+                url: "/View/Delete",
+                data: { id: itemId },
+                success: function (response) {
+                    $("#cartListView").data("kendoListView").dataSource.read();
+                    cartTotal -= itemPrice;
+                    updateCartTotal();
+                },
+                error: function (error) {
+                    console.error("Error deleting item:", error);
+                }
+            });
+        }
+        function buyNow() {
+            alert('Your Order was successful!');
+        }
+     
+    </script>
+
+    <style>
+       
+        .Shop img {
+            width: 250px;
+            height: 230px;
+        }
+
+        .Shop {
+            width: 700px;
+            display: flex;
+            
+        }
+
+            .Shop a {
+                cursor: pointer;
+                margin-bottom: 10px;
+                margin-top: 50px;
+            }
+
+        .buy-now-section {
+            margin-left: 590px;
+                    
+        }
+
+        .card-text{
+            border: 2px solid;
+            width:700px;
+            height:60px;
+            font-size:30px;
+
+        }
+        .Shop p{
+            margin-top:20px;
+            font-size: 20px;
+        }
+    </style>
+
+</body>

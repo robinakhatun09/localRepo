@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<head>
+
+
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+    <!-- Add the Kendo library by either using the JAVASCRIPT MODULES -->
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+
+    <!-- OR by using the BUNDLED JAVASCRIPT -->
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+
+
+</head>
+<body>
+
+    <div id="example">
+        <img src="https://cdn.pixabay.com/photo/2017/06/10/16/22/coffee-2390136_1280.jpg">
+        <div id="megaStore">
+
+            <ul id="menu">
+
+                <li>
+                    Products
+                    <ul>
+                        <li>
+                            Furniture
+                            <ul>
+                                <li>Tables & Chairs</li>
+                                <li>Sofas</li>
+                                <li>Occasional Furniture</li>
+                                <li>Children's Furniture</li>
+                                <li>Beds</li>
+                            </ul>
+
+
+                        </li>
+                        <li>
+                            Decor
+                            <ul>
+                                <li>Bed Linen</li>
+                                <li>Throws</li>
+                                <li>Curtains & Blinds</li>
+                                <li>Rugs</li>
+                                <li>Carpets</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Storage
+                            <ul>
+                                <li>Wall Shelving</li>
+                                <li>Kids Storage</li>
+                                <li>Baskets</li>
+                                <li>Multimedia Storage</li>
+                                <li>Floor Shelving</li>
+                                <li>Toilet Roll Holders</li>
+                                <li>Storage Jars</li>
+                                <li>Drawers</li>
+                                <li>Boxes</li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            Lights
+                            <ul>
+                                <li>Ceiling</li>
+                                <li>Table</li>
+                                <li>Floor</li>
+                                <li>Shades</li>
+                                <li>Wall Lights</li>
+                                <li>Spotlights</li>
+                                <li>Push Light</li>
+                                <li>String Lights</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Stores
+                    <ul>
+                        <li>
+                            <div id="template">
+                                <h2>Around the Globe</h2>
+                                <ol>
+                                    <li>United States</li>
+                                    <li>Europe</li>
+                                    <li>Canada</li>
+                                    <li>Australia</li>
+                                </ol>
+
+                                <button class="k-button k-button-solid-base k-button-solid k-button-md k-rounded-md">See full list</button>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Blog
+                </li>
+                <li>
+                    Company
+                </li>
+                <li>
+                    Events
+                </li>
+                <li disabled="disabled">
+                    News
+                </li>
+            </ul>
+        </div>
+        <style>
+            #megaStore {
+                margin: 30px auto;
+                position: absolute;
+            }
+
+            #menu h2 {
+                font-size: 15px;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                
+            }
+
+            #example {
+                position: relative;
+                display: flex;
+            }
+
+            img {
+                opacity: 0.5;
+            }
+
+            .k-menu-link-text {
+                font-size: 25px;
+                color: black;
+            }
+
+            .k-svg-icon {
+                color: purple;
+            }
+
+            .k-menu-group .k-item > .k-link:active, .k-menu-group .k-item > .k-link.k-active, .k-menu-group .k-item > .k-link.k-selected, .k-menu.k-context-menu .k-item > .k-link:active, .k-menu.k-context-menu .k-item > .k-link.k-active, .k-menu.k-context-menu .k-item > .k-link.k-selected {
+                background-color: #b1cfb1;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $("#menu").kendoMenu();
+            });
+        </script>
+    </div>
+
+
+
+</body>
+</html>

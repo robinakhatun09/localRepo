@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "QrKt2YvKeRMa+ZjoBZM04oR16Lrdhzpo6zxsc6i2nYBMYErI3B+1qVn1JXfR6mGa1NrP4rq9sZoMIxG/dHcLzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rubin\\source\\repos\\asyncawait\\asyncawait\\asyncawait.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}

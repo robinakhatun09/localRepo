@@ -1,0 +1,17 @@
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\BuissessLogicLayer.deps.json
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\BuissessLogicLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\BuissessLogicLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\BuissnessObjectLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\BuissnessObjectLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.AssemblyInfo.cs
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.csproj.CopyComplete
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\refint\BuissessLogicLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\BuissessLogicLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissessLogicLayer\obj\Debug\net6.0\ref\BuissessLogicLayer.dll

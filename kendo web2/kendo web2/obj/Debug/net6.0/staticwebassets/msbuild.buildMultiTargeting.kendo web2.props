@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\kendo web2.props" />
+</Project>

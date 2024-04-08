@@ -1,0 +1,277 @@
+﻿@model session.mvcProject.Models.User
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travelin - Travel Tour Booking HTML Templates</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js" type="module"></script>
+</head>
+<body>
+    <div class="top">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                        <a id="userDataLink" href="Admin/About"><i class="bi bi-person-circle"></i>UserData</a>
+                </li>
+                    <li class="nav-item">
+                    <a id="logout" asp-controller="Admin" asp-action="LogOut">Logout</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="contain mt-5">
+    <h1>Welcome!</h1>
+    <h3>@ViewBag.MySession</h3>
+    </div> 
+    <div class="container mt-5">
+    <button id="addButton" class="btn btn-primary">Add Student</button>
+        <div id="studentGridContainer">
+    <div id="modal" class="modal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Add/Edit Student</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="StudentForm" data-ajax-success="Onajaxsuccess">
+                        <div class="form-group">
+                            <input type="number" hidden asp-for="Id" class="form-control" id="Id">
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Name">Name</label>
+                            <input class="form-control" id="Name" asp-for="Name">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email">Email</label>
+                            <input class="form-control" id="Email" asp-for="Email">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Contact">Contact</label>
+                            <input class="form-control" id="Contact" asp-for="Contact">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Course">Course</label>
+                            <input class="form-control" id="course" asp-for="Course">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Batch">Batch</label>
+                            <input class="form-control" id="Batch" asp-for="Batch">
+                        <div class="form-group">
+                                <label asp-for="Password">Password</label>
+                                <input class="form-control" id="Password" asp-for="Password">
+                        </div>
+                        <div class="form-group">
+                                <label asp-for="ConfirmPassword">ConfirmPassword</label>
+                                <input class="form-control" id="ConfirmPassword" asp-for="ConfirmPassword">
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="studentGrid"></div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#studentGrid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "/Admin/UserData",
+                            dataType: "json"
+                        },
+                        destroy: {
+                            url: "/Admin/Delete",
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "id",
+                            fields: {
+                                name: { type: "string" },
+                                email: { type: "string" },
+                                contact: { type: "string" },
+                                courseName: { type: "string" },
+                                batchName: { type: "string" }
+                            }
+                        }
+                    },
+                    pageSize: 10
+                },
+                editable: "popup",
+                pageable: true,
+                toolbar: ["pdf", "excel", "search"],
+                columns: [
+                    { field: "name", title: "Name" },
+                    { field: "email", title: "Email", width: "220px", },
+                    { field: "contact", title: "Contact" },
+                    { field: "courseName", title: "Course", attributes: getCourseColor},
+                    { field: "batchName", title: "Batch", width: "180px", attributes: getCourseColor  },
+                    { command: ["destroy"],title: "Delete" },
+                    { title: "Edit", template: "<a class='k-button btn btn-warning editButton'>Edit</a>", }
+                ]
+
+            });
+
+            $("#addButton, #studentGridContainer").hide();
+            $("#userDataLink").click(function (e) {
+                e.preventDefault(); 
+                $("#addButton, #studentGridContainer").toggle();
+                if ($("#studentGridContainer").is(":visible")) {
+                    $("#studentGrid").data("kendoGrid").dataSource.read();
+                }
+            });
+            var Courses = $("#course").kendoDropDownList({
+                optionLabel: "Select Course...",
+                dataTextField: "courseName",
+                dataValueField: "courseId",
+                
+                dataSource: {
+                    serverFiltering: true,
+                    dataType: "json",
+                    transport: {
+                        read: "/Admin/CourseData"
+                    }
+                }
+            }).data("kendoDropDownList");
+
+            var States = $("#Batch").kendoDropDownList({
+                cascadeFrom: "course",
+                optionLabel: "Select Batch...",
+                dataTextField: "batchName",
+                dataValueField: "batchId",
+               
+                dataSource: {
+                    dataType: "json",
+                    serverFiltering: true,
+                    transport: {
+                        read: {
+                            url: "/Admin/BatchData",
+                            data: function () {
+                                return {
+                                    id: Courses.value()
+                                };
+                            }
+                        }
+                    }
+                }
+            }).data("kendoDropDownList");
+            $("#addButton").click(function () {
+                $("#StudentForm")[0].reset();
+                $("#modalTitle").text("Add Student");
+                $("#modal").modal("show");
+            });
+            $(".close").click(function () {
+                $("#modal").modal("hide");
+            });
+
+            $(".btn-secondary").click(function () {
+                $("#modal").modal("hide");
+            });
+
+            $("#studentGrid").on("click", ".editButton", function () {
+                
+                var dataItem = $("#studentGrid").data("kendoGrid").dataItem($(this).closest("tr"));
+
+                
+                $("#Id").val(dataItem.id);
+                $("#Name").val(dataItem.name);
+                $("#Email").val(dataItem.email);
+                $("#Contact").val(dataItem.contact);
+                $("#course").val(dataItem.course);
+                $("#Batch").val(dataItem.batch);
+                $("#Password").val(dataItem.password);
+                $("#ConfirmPassword").val(dataItem.confirmPassword);
+                $("#modalTitle").text("Edit Student");
+                $("#modal").modal("show");
+            });
+            $("#saveButton").click(function () {
+                debugger;
+                var formData = $("#StudentForm").serialize();
+                var edit = $("#StudentForm #Id").val() == "";
+                var url = edit ? "/Admin/Create/" : "/Admin/Edit/";
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: formData,
+                    success: function (data) {
+                        if (data.success) {
+                            alert(data.error);
+                            $("#modal").modal("hide");
+                            $("#studentGrid").data("kendoGrid").dataSource.read();
+                        }
+                        else {
+                            alert(data.error);
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+        let getCourseColor = (data) => {
+            var color;
+            if (data.course == 1) {
+                color = "lightblue";
+            } else if (data.course == 2) {
+                color = "lightpink";
+            } else if (data.course == 3) {
+                color = "lavender";
+            } else if (data.course == 4) {
+                color = "lightGreen";
+            }
+            else {
+                color = "Lightyellow";
+            }
+            return { style: `background-color: ${color}` };
+        }       
+        function Onajaxsuccess(result) {
+            if (result.success) {
+                alert("data inserted successfully");
+            }
+            else {
+                alert(result.error);
+            }
+        }
+    </script>
+    <style>
+        .navbar{
+        background-color:antiquewhite;
+        font-size:x-large;
+        }
+        #userDataLink{
+            color:black;
+            margin-right: 15px;
+        }
+
+        .contain{
+            text-align:center;
+        }
+
+        #logout{
+            color: black;
+        }
+    </style>
+</body>

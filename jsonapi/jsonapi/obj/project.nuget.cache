@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gr9mPA1UNdq2I1/k/sObyycuzWWnMRSmwc02Y7RUB15VH9BNxcLlfcR2u/iw4eCOm4c6yPRWuwpSHeDRd0pVPQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rubin\\source\\repos\\jsonapi\\jsonapi\\Test_ApiProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rubin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}

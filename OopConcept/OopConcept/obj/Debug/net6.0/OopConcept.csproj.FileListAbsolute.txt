@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.AssemblyInfo.cs
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\OopConcept\OopConcept\bin\Debug\net6.0\OopConcept.exe
+C:\Users\rubin\source\repos\OopConcept\OopConcept\bin\Debug\net6.0\OopConcept.deps.json
+C:\Users\rubin\source\repos\OopConcept\OopConcept\bin\Debug\net6.0\OopConcept.runtimeconfig.json
+C:\Users\rubin\source\repos\OopConcept\OopConcept\bin\Debug\net6.0\OopConcept.dll
+C:\Users\rubin\source\repos\OopConcept\OopConcept\bin\Debug\net6.0\OopConcept.pdb
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.dll
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\refint\OopConcept.dll
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.pdb
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\OopConcept.genruntimeconfig.cache
+C:\Users\rubin\source\repos\OopConcept\OopConcept\obj\Debug\net6.0\ref\OopConcept.dll

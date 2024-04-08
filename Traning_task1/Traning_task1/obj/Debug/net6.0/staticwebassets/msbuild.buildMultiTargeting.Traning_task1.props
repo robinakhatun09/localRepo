@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Traning_task1.props" />
+</Project>

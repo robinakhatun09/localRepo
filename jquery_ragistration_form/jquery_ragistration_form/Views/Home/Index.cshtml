@@ -1,0 +1,227 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        body {
+            background-size: cover;
+            color: #fff;
+            padding: 15px;
+        }
+
+        #hr1 {
+            max-width: 1000px;
+        }
+
+        #container {
+            background: black;
+            max-width: 700px;
+            width: 100%;
+            padding: 60px 30px;
+            border-radius: 5px;
+            background: black;
+            box-shadow: -1px 4px 28px;
+        }
+
+        button {
+            border-radius: 8px;
+        }
+
+        #rgf {
+            font-size: 50px;
+            font-weight: 500;
+            text-shadow: 0 0 3px black;
+        }
+
+        span {
+            color: red;
+        }
+
+    </style>
+    <form action="#">
+
+        <div class="container" id="container">
+            <div><h1 class="text-center mt-4" id="rgf">Registration Form </h1></div>
+            <hr id=" hr1" />
+            <div class="form-group mt-3">
+                <label for="user" class="form-label">Username</label>
+                <input type="text" class="form-control rounded-pill" name="username" id="usernames" placeholder="Enter username">
+               
+                <span id="usercheck"> </span>
+            </div>
+            <div class="form-group mt-3">
+                <label for="address" class="form-label">Address</label>
+
+                <input type="text" class="form-control rounded-pill" id="address" placeholder="Enter your address">
+                <span id="addcheck"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label for="enteremail" class="form-label">Email</label>
+
+                <input type="email" class="form-control rounded-pill" name="email" id="email" placeholder="Enter your email">
+                <span id="emailcheck"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="enterphone" class="form-label">Mobile Number</label>
+                <input type="text" class="form-control rounded-pill" name="mobile" id="phone" placeholder="Enter 10 digit">
+                <span id="phonecheck"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="Password" class="from-lable">Password</label>
+                <input type="password" class="form-control rounded-pill" id="password" name="password" placeholder="Enter Password">
+                <span id="passcheck"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label for="cpass">Confirm-Password</label>
+                <input type="password" class="form-control rounded-pill" id="conpassword" name="conpassword" placeholder="Enter confirm Password">
+                <span id="conpasscheck"></span>
+            </div>
+            <span id="errormsg"></span>
+           
+            <div class="mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="other" name="gender" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    I hearby declare that all the information is given by me is correct as per my knoledge.
+                </label>
+            </div>
+
+
+           
+            <div class="text-center mb-3">
+                <input type="button" class="btn-outline-secondary text-center mt-4 mx-2 text-center align-self-center" id="submit_btn" value="submit">
+            </div>
+
+        </div>
+    </form>
+
+
+<script>
+    var valu = true;
+    var email_exp =/^[A-Za-z0-9._%-]+@@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    var password_exp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+   
+        $("#submit_btn").click(function (event) {
+            event.preventDefault();
+            validateForm();
+       
+        $("#usernames, #address, #email, #phone, #password, #conpassword").keyup(function () {
+            validateForm();
+        });
+        function validateForm() {
+            valu = true;
+            var name = $("#usernames").val();
+            var a_ddress = $("#address").val();
+            var e_mail = $("#email").val();
+            var contact = $("#phone").val();
+            var pswd = $("#password").val();
+            var cpswd = $("#conpassword").val();
+
+
+
+            if (name == "") {
+                $("#usercheck").text("please fill username");
+                valu = false;
+            }
+            else {
+                $("#usercheck").text("");
+
+            }
+            if ($("#address").val() == "") {
+                $("#addcheck").text("Please fill Address");
+                valu = false;
+            }
+            else {
+                $("#addcheck").text("");
+            }
+
+            if ($("#email").val().match(email_exp)) {
+                $("#emailcheck").text("");
+            }
+            else if ($("#email").val() == "") {
+                $("#emailcheck").text("Please fill email");
+                valu = false;
+            }
+            else {
+                $("#emailcheck").text("Invalid Email");
+                valu = false;
+            }
+            if ($("#phone").val() == "") {
+                $("#phonecheck").text("Please fill Number");
+                valu = false;
+            }
+
+            else if ($("#phone").val().length != 10) {
+                $("#phonecheck").text("Invalid Contact");
+                valu = false;
+            }
+            else {
+                $("#phonecheck").text("");
+            }
+            if ($("#password").val().match(password_exp)) {
+                $("#passcheck").text("");
+            }
+            else if ($("#password").val() == "") {
+                $("#passcheck").text("Please fill password");
+                valu = false;
+            }
+            else {
+                $("#passcheck").text("Invalid password");
+                valu = false;
+            }
+            if ($("#conpassword").val() == "") {
+                $("#conpasscheck").text("Please fill Confirm password");
+                valu = false;
+            } else {
+                $("#conpasscheck").text("");
+
+                if (pswd != cpswd) {
+                    $("#errormsg").text("Password not match");
+                    valu = false;
+                }
+                else {
+                    $("#errormsg").text("");
+
+                }
+            }
+            if (valu) {
+                const alrt_detail = `Username : ${name}\n
+                Address: ${a_ddress}\n
+                Email : ${e_mail}\n
+                Mobile Number : ${contact}`;
+                alert("Form Details:\n" + alrt_detail);
+            }
+        }
+});
+  
+
+</script>
+
+
+
+
+
+</body>

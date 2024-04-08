@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\bin\Debug\net6.0\Collections_demo.exe
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\bin\Debug\net6.0\Collections_demo.deps.json
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\bin\Debug\net6.0\Collections_demo.runtimeconfig.json
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\bin\Debug\net6.0\Collections_demo.dll
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\bin\Debug\net6.0\Collections_demo.pdb
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.AssemblyInfo.cs
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.dll
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\refint\Collections_demo.dll
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.pdb
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\Collections_demo.genruntimeconfig.cache
+C:\Users\rubin\source\repos\Collections_demo\Collections_demo\obj\Debug\net6.0\ref\Collections_demo.dll

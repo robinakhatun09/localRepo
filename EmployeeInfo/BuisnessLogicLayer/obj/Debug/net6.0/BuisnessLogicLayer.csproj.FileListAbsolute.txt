@@ -1,0 +1,17 @@
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.AssemblyInfo.cs
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\BuisnessLogicLayer.deps.json
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\BuisnessLogicLayer.runtimeconfig.json
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\BuisnessLogicLayer.dll
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\BuisnessLogicLayer.pdb
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.csproj.CopyComplete
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.dll
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\refint\BuisnessLogicLayer.dll
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.pdb
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\BuisnessLogicLayer.genruntimeconfig.cache
+C:\Users\rubin\source\repos\EmployeeInfo\BuisnessLogicLayer\obj\Debug\net6.0\ref\BuisnessLogicLayer.dll

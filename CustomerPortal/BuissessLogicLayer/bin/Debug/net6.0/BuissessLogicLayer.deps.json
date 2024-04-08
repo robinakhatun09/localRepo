@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "BuissessLogicLayer/1.0.0": {
+        "dependencies": {
+          "BuissnessObjectLayer": "1.0.0",
+          "DataAccessLayer": "1.0.0"
+        },
+        "runtime": {
+          "BuissessLogicLayer.dll": {}
+        }
+      },
+      "BuissnessObjectLayer/1.0.0": {
+        "runtime": {
+          "BuissnessObjectLayer.dll": {}
+        }
+      },
+      "DataAccessLayer/1.0.0": {
+        "dependencies": {
+          "BuissnessObjectLayer": "1.0.0"
+        },
+        "runtime": {
+          "DataAccessLayer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BuissessLogicLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BuissnessObjectLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

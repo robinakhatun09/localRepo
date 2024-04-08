@@ -1,0 +1,14 @@
+C:\Users\rubin\source\repos\asyncawait\asyncawait\bin\Debug\net6.0\asyncawait.exe
+C:\Users\rubin\source\repos\asyncawait\asyncawait\bin\Debug\net6.0\asyncawait.deps.json
+C:\Users\rubin\source\repos\asyncawait\asyncawait\bin\Debug\net6.0\asyncawait.runtimeconfig.json
+C:\Users\rubin\source\repos\asyncawait\asyncawait\bin\Debug\net6.0\asyncawait.dll
+C:\Users\rubin\source\repos\asyncawait\asyncawait\bin\Debug\net6.0\asyncawait.pdb
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.AssemblyInfo.cs
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.dll
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\refint\asyncawait.dll
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.pdb
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\asyncawait.genruntimeconfig.cache
+C:\Users\rubin\source\repos\asyncawait\asyncawait\obj\Debug\net6.0\ref\asyncawait.dll

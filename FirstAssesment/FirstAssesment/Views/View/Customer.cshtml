@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FirstAssesment.Models.Customer>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+</head>
+<body>
+
+    <h1 class="text-dark text-lg-center">User Record</h1>
+    <div id="myGrid" class="ag-theme-balham " ></div>
+    <script>
+        const gridOptions = {
+            rowData: @Html.Raw(Json.Serialize(Model)),
+            columnDefs: [
+                { field: "username" },
+                { field: "email" },
+                { field: "contact" },
+                { field: "password" }
+                
+            ],
+            defaultColDef: {
+                sortable: true,
+                filter: true,
+                editable: true
+            }
+        };
+        new agGrid.Grid(document.querySelector('#myGrid'), gridOptions);
+    </script>
+    <style>
+      #myGrid {
+            width: 800px;
+            height: 600px;
+            margin: auto;
+           
+        }
+      
+    </style>
+
+</body>
+
+
+

@@ -1,0 +1,71 @@
+﻿@model List<listviewTraveler.Models.Traveler>
+
+<head>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-ocean-blue.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+</head>
+<body>
+    
+    <script type="text/kendo-x-tmpl" id="template">
+        <div class="travelers" style="border:2px solid">
+                <h3>#:name#</h3>
+                <p>#:email#</p>
+                <p>#:city#</p>
+             <img src="data:image/*;base64,#:image#" height="50" width="50"></img>
+             <div class="edit-buttons">
+                <a class="k-button k-button-solid-base k-button-solid  k-delete-button" href="\Travelerlist\Delete\#:id">#= kendo.ui.icon({ icon: 'x' }) #</a>
+            </div>
+             
+        </div>
+            
+    </script>
+    
+    
+    <h1 class="text-center text-primary">Traveler Record</h1>
+     <a id="add-new-button" class="k-button k-button-solid-base " href="/Travelerlist/Insert"><span class="k-button-icon"></span>Add new record</a>
+    <div id="listView"></div>
+    <script>
+        $("#listView").kendoListView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Travelerlist/Getdata/",
+                        dataType: "json"
+                    },
+                    create: {
+                        url: "/Travelerlist/Insert/",
+                        dataType: "json"
+
+                    },
+                    destroy: {
+                        url: "/Travelerlist/Delete",
+                        dataType: "json",
+                        type:"POST"
+
+                    }
+
+
+                },
+
+
+                schema: {
+                    model: {
+                        id: "id",
+                        fields: {
+                            id: { type: "number" },
+                            name: { type: "string" },
+                            email: { type: "string" },
+                            city: { type: "string" },
+                            image: {type:"byte[]"}
+                        }
+                    }
+                }
+            },
+
+            template: kendo.template($("#template").html()) 
+        });
+    </script>
+    
+</body>

@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+</head>
+<body>
+        <div id="grid"></div>
+        <script>
+            $(document).ready(function () {
+                
+                var people = [
+                { Name: "Aaradhya",Email:"aradhys@gmail.com", city: "Mumbai" },
+                { Name: "Drishti", Email: "drishti@gmail.com", city: "Delhi" },
+                { Name: "Ira ", Email: "ira@gmail.com", city: "Bhopal" },
+                { Name: "Krisha ", Email: "krisha@gmail.com", city: "Indore" },
+                { Name: "Mehar", Email: "mehar@gmail.com", city: "Pune" },
+                { Name: "Navya ", Email: "navya@gmail.com", city: "Hyderabad" },
+                { Name: "Saloni ", Email: "saloni@gmail.com", city: "Kolkata" },
+                { Name: "Tanvi ", Email: "tanvi@gmail.com", city: "Jaipur" },
+                { Name: "Tara", Email: "tara@gmail.com", city: "Agra" },
+                { Name: "Nyra ", Email: "nyra@gmail.com", city: "Chennai" }
+                ];
+                    $("#grid").kendoGrid({
+                    toolbar: ["excel", "pdf", "search", "create", "save", "cancel"],
+                    columns: [{ title: " Name",field:"Name"},
+                        {title:"Email",field:"Email"},
+                        {title:"City",field:"city"}],
+                         editable: "popup", 
+                
+                
+                    dataSource: {
+                        data:people,
+                        pageSize:5
+                    },
+                    height:350,
+                    srollable:true,
+                    pageable:true,
+                    sortable:true,
+                    filterable: 
+                    {
+                    mode: "row"
+                    }, 
+                });
+            });
+        </script>
+</body>
+</html>

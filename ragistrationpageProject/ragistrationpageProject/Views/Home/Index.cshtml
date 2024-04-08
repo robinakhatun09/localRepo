@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>   
+        .container {
+            padding: 16px;
+            background-color: lightsteelblue;
+            text-align:center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type=text], input[type=password], input[type=email], input[type=number] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            background: #f1f1f1;
+        }
+        .registerbtn {
+            background-color:cornflowerblue;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        label {
+            text-align: left;
+            width: 100%; 
+            font-weight: bold;
+            
+        }
+        .confirmation-checkbox {
+            display: flex;
+            text-align:left;
+
+           
+        }
+
+        
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Register</h1>      
+        <label>Name</label><br />
+        <input type="text" placeholder="Enter Your Name"><br />
+        <label>Email</label><br />
+        <input type="email" placeholder="Enter Your Email"><br />
+        <label>Contact Number</label><br />
+        <input type="number" placeholder="Enter Your 10 Digit Number"><br />
+        <label>Address</label><br />
+        <input type="text" placeholder="Enter Your Address"><br />
+
+        <label>Password</label><br />
+        <input type="password" placeholder="Enter Your Password"><br />
+
+        <label>Confirm Password</label><br />
+        <input type="password" placeholder="Enter Your Confirm  Password"><br />
+        <label class="container">
+            <input type="checkbox" checked="checked">One
+            
+        </label>
+
+       
+        <button type="submit" class="registerbtn">Register</button>
+    </div>
+
+    
+</body>
+</html>

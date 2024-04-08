@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js" type="module"></script>
+</head>
+<body>
+    <div id="grid"></div>
+    <script>
+        $(document).ready(function () {
+            $("#grid").kendoGrid({
+                dataSource: {
+                    type: "json",
+                    transport: {
+                            read: "https://jsonplaceholder.typicode.com/todos"
+                    },
+                    pageSize: 20
+                },
+                height: 600,
+                pageable: {
+                    pageSizes: true,
+                    buttonCount: 2
+                },
+                columns: [{
+                    field: "id",
+                    title: "Id",
+
+                }, {
+                    field: "userId",
+                    title: "UserId"
+                }, {
+                    field: "title",
+                    title: "Title"
+                }, {
+                    field: "completed",
+
+                }]
+            });
+        });
+    </script>
+</body>
+</html>
+
+

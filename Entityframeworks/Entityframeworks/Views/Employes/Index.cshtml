@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Entityframeworks.Models.Employee>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">Employee Record</h1>
+            <a class="btn btn-sm btn-success m-1" asp-controller="Employes" asp-action="ViewDetails">Create Record</a>
+            <p class="text-center text-success">@TempData["error"]</p>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>EmployeeId</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                </tr>
+                @foreach(var d in Model)
+                {
+                    <tr class="text-center">
+                        <td>@d.Id</td>
+                        <td>@d.Name</td>
+                        <td>@d.Email</td>
+                        <td>@d.Age</td>
+                        <td>@d.Address</td>
+                        <td>
+                        <a class="btn-primary btn-sm btn-warning" asp-controller="Employes" asp-action="Edit" asp-route-id="@d.Id">Edit</a>
+                        <a class="btn-primary btn-sm btn-danger" asp-controller="Employes" asp-action="Delete" asp-route-id="@d.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

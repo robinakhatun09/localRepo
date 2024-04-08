@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=”https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js”></script>
+    
+    <style>
+        body {
+            background-size: cover;
+            color: #fff;
+            padding: 15px;
+        }
+
+        #hr1 {
+            max-width: 1000px;
+        }
+
+        #container {
+            background: black;
+            max-width: 700px;
+            width: 100%;
+            padding: 60px 30px;
+            border-radius: 5px;
+            background: black;
+            box-shadow: -1px 4px 28px;
+        }
+
+        button {
+            border-radius: 8px;
+        }
+
+        #rgf {
+            font-size: 50px;
+            font-weight: 500;
+            text-shadow: 0 0 3px black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="" name="formValidation" id="formValidation">
+
+        <div class="container" id="container">
+            <div><h1 class="text-center mt-4" id="rgf">Registration Form </h1></div>
+            <hr id=" hr1" />
+            <div class="form-group mt-3">
+                <label for="user" class="form-label">UserName:</label>
+                <input type="text" class="form-control rounded-pill" name="username" placeholder="Enter your Full Name" id="username">
+                <h5 id="usercheck"> </h5>
+            </div>
+            <div class="form-group mt-3">
+                <label for="address" class="form-label">Address</label>
+
+                <input type="text" class="form-control rounded-pill" id="place" placeholder="Enter your address">
+
+            </div>
+            <div class="form-group mt-3">
+                <label for="enteremail" class="form-label">Email</label>
+
+                <input type="email" class="form-control rounded-pill" name="email" id="email" placeholder="Enter your email">
+                <h5 id="emailcheck"></h5>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="enterphone" class="form-label">Mobile Number</label>
+                <input type="text" class="form-control rounded-pill" name="mobile" id="phone" placeholder="Enter 10 digit number">
+                <h5 id="phonecheck"></h5>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="Password" class="from-lable">Password</label>
+                <input type="password" class="form-control rounded-pill" id="password" name="password" placeholder="Enter Password">
+                <h5 id="passcheck"></h5>
+            </div>
+            <div class="form-group mt-3">
+                <label for="cpass">Confirm-Password</label>
+                <input type="password" class="form-control rounded-pill" id="conpassword" name="conpassword" placeholder="Enter confirm Password">
+                <h5 id="conpasscheck"></h5>
+            </div>
+
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    I hearby declare that all the information is given by me is correct as per my knoledge.
+                </label>
+            </div>
+
+
+            <div class="mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="other" name="gender" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+
+
+            <div class="text-center mb-3">
+                <input type="submit" class="btn-outline-secondary text-center mt-4 mx-2 text-center align-self-center" id="submit_btn" onclick="validation()" value="submit">
+            </div>
+
+        </div>
+    </form>
+    <script>
+        
+    </script>
+</body>
+</html>

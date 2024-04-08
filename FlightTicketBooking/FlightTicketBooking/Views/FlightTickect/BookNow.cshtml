@@ -1,0 +1,147 @@
+﻿@model FlightTicketBooking.Models.Flight;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Book Now</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="card">
+    <h1>Book Now</h1>       
+        <h3>Flight Details</h3>
+        <div id="location" class="box">
+                <p>Flight Number: @Model.FlightNumber</p>
+                <p>Departure City: @Model.DepartureCity</p>
+                <p>Arrival City: @Model.ArrivalCity</p>
+                <p>DepartureTime: @Model.DepartureTime</p>
+                <p> ArrivalTime: @Model.ArrivalTime</p>
+                <p id="pay"> Price: @Model.Price</p>
+            </div>
+
+        <div class="box">
+        <div class="container__form">
+            <form id="bookingForm" class="form" method="post" asp-controller="FlightTickect" asp-action="ConfirmBooking">
+                <input type="hidden" name="flightId" value="@Model.FlightId" />
+                <input for=" PassengerName" id="PassengerName" type="text" placeholder="Name" class="input" /></br>
+                <input for="PassengerContact" id="PassengerContact" type="number" placeholder="Contact" class="input" /></br>
+                    <input for="NumberOfSeats" id="NumberOfSeats" type="number" placeholder="Seat" value="1" class="input" /></br>
+                <button type="submit" id="bookingForm" class="btn">Book Now</button></br>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            
+            $('#bookingForm').submit(function (e) {
+                e.preventDefault();
+                var payElement = document.getElementById("pay");
+                var totalPrice = parseFloat(payElement.textContent.replace(/[^\d.]/g, ''));
+                console.log(pay);             
+                var formData = {
+                    flightId: $('[name="flightId"]').val(),
+                    passengerName: $('#PassengerName').val(),
+                    passengerContact: $('#PassengerContact').val(),
+                    numberOfSeats: $('#NumberOfSeats').val(),
+                    TotalPrice: totalPrice
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/FlightTickect/ConfirmBooking',
+                    data: formData,
+                    success: function (response) {
+                        alert('Complete Payment Process!');
+                        window.location.href = '/FlightTickect/PaymentView';
+                    },
+                    error: function (error) {
+                        alert('Error occurred while booking. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;           
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+        }
+
+        .card {
+            width: 800px;
+            padding: 30px 25px 35px 50px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 8px 0px blue;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       
+       
+        h1 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        h3 {
+            margin-left:25px;
+            color: black;
+        }
+
+
+        div {
+            margin: 10px;
+            padding: 20px;
+
+
+           
+        }
+
+        #location {
+            font-size: 16px;
+        }
+
+        .container__form {
+            margin-top: 20px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .btn:hover {
+                background-color: #004080;
+            }
+    </style>
+</body>
+</html>

@@ -1,0 +1,208 @@
+﻿@model FlightTicketBooking.Models.Register
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body translate="no">
+    <div class="dark-button"></div>
+    <div class="app">
+        <div class="container__form signup">
+            <form class="form" method="post" asp-controller="FlightTickect" asp-action="Register">
+                <h2 class="form__title">Sign Up</h2>
+                <input asp-for="Username" type="text" placeholder="User" class="input" />
+                <input asp-for="Email" type="email" placeholder="Email" class="input" />
+                <input asp-for="Contact" type="number" placeholder="Contact" class="input" />
+                <input asp-for="Password" type="password" placeholder="Password" class="input" />
+                <input asp-for="ConfirmPassword" type="password" placeholder="ConfirmPassword" class="input"/>
+                <div>
+                    <input type="checkbox" class="form-check-input" id="agreeTerms">
+                    <label class="form-check-label" for="agreeTerms">I agree to the terms of use</label>
+                </div>
+                <button  type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+        <div class="container__form signin">
+            <form class="form" asp-controller="FlightTickect" asp-action="Login">
+                <h2 class="form__title">Sign In</h2>
+                <input type="email" asp-for="Email" placeholder="Email" class="input" />
+                <input type="password" asp-for="Password" placeholder="Password" class="input" />
+                <a href="/FlightTickect/ForgotPassword" class="link" id="forgotPasswordLink">Forgot your password?</a>
+                <button  type="submit" class="btn">Sign In</button>
+            </form>
+        </div>       
+        <div class="app-hide">
+            <div class="overlay">
+                <div class="panel overlay-in">
+                    <button class="btn" id="signUp">Sign In</button>
+                </div>
+                <div class="panel overlay-up">
+                    <button class="btn" id="signIn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let signInBtn = document.getElementById("signIn");
+        let signUpBtn = document.getElementById("signUp");
+        let forgotPasswordLink = document.getElementById("forgotPasswordLink");
+        let backToSignInLink = document.getElementById("backToSignIn");
+        let app = document.querySelector(".app");
+        signInBtn.addEventListener("click", () => {
+            app.classList.remove("swap");
+        });
+        signUpBtn.addEventListener("click", () => {
+            app.classList.add("swap");
+        });
+    </script>
+    <style>
+        body {
+            background-image: url(https://media.istockphoto.com/id/155380716/photo/commercial-jet-flying-over-clouds.jpg?b=1&s=612x612&w=0&k=20&c=ckHvRMzInb8Ih2GwPYlnZcu9BMPZUwmGDBztrytDXXA=);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5em;
+            min-height: 100vh;
+            
+        }              
+        .app {
+            border-radius: 14px;
+            padding: 6em;
+            padding-left: 700px;
+            width: 100%;
+            height: 90vh;
+            max-width: 750px;
+            max-height: 550px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+        .form__title {
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 1.25rem;
+        }
+        .link {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+            text-decoration: none;
+        }
+        .container__form {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all 0.6s ease-in-out;
+        }
+        .signup {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+        .app.swap .signup {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .signin {
+            left: 0;
+            opacity: 0;
+            width: 50%;
+            z-index: 1;
+        }
+        .app.swap .signin {
+            -webkit-animation: show 0.6s;
+            animation: show 0.6s;
+            opacity: 1;
+            transform: translateX(100%);
+            z-index: 5;
+        }
+        .app-hide {
+            height: 100%;
+            left: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transition: transform 0.6s ease-in-out;
+            width: 50%;
+            z-index: 100;
+        }
+        .app.swap .app-hide {
+            transform: translateX(-100%);
+        }
+        .overlay {
+            background: url("https://media.istockphoto.com/id/155380716/photo/commercial-jet-flying-over-clouds.jpg?b=1&s=612x612&w=0&k=20&c=ckHvRMzInb8Ih2GwPYlnZcu9BMPZUwmGDBztrytDXXA=");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            left: -100%;
+            position: relative;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+            width: 200%;
+        }
+        .app.swap .overlay {
+            transform: translateX(50%);
+        }
+        .panel {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+            width: 50%;
+        }
+        .overlay-up {
+            transform: translateX(-20%);
+        }
+        .app.swap .overlay-up {
+            transform: translateX(0);
+        }
+        .overlay-in {
+            right: 0;
+            transform: translateX(0);
+        }
+        .app.swap .overlay-in {
+            transform: translateX(20%);
+        }
+        .form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 3rem;
+            height: 100%;
+            text-align: center;
+        }
+        .input {
+            background-color: #fff;
+            border: none;
+            padding: 0.9rem 0.9rem;
+            margin: 0.5rem 0;
+            width: 100%;
+            border-radius: 10px;
+        }
+        #signUp {
+            font-size: 30px;
+        }
+        #signIn {
+            font-size: 30px;
+        }
+    </style>
+</body>
+</html>
+
+

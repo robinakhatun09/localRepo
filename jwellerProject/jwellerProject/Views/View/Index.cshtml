@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNuawoO498KgUdaMYPicLDudP1J9WaQCwfPgErsLMjMu8szTGjdjsFTDqlAw&s" alt="RK Jwellers" height="80">
+            </a>
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/View/Login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/View/Ragister">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-suit-heart"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="button">
+        <a type="button" class="btn btn-white" asp-controller="View" asp-action="GetData">All Jwellery</a>
+       
+        <a type="button" class="btn btn-white" asp-controller="View" asp-action="">More</a>
+
+    </div>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="https://e0.pxfuel.com/wallpapers/417/350/desktop-wallpaper-challani-jewels-shop-gold-diamond-jadau-polki-kempu-jewellery-jewellery-model.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="https://www.suvarnajewellers.com/jewell.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+    
+        <style>
+            .navbar {
+                background-image: url('https://t4.ftcdn.net/jpg/06/33/38/97/240_F_633389765_e91XbArkZoGBDCAl8JCsSppcI8TALRer.jpg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                width: 100vw;
+            }
+
+            .nav-link {
+                display: block;
+                padding: .5rem 1rem;
+                color: black;
+                font-size: 25px;
+            }
+        </style>
+
+
+    
+</body>
+</html>

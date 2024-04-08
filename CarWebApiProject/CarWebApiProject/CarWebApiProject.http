@@ -1,0 +1,6 @@
+@CarWebApiProject_HostAddress = http://localhost:5155
+
+GET {{CarWebApiProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

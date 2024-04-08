@@ -1,0 +1,99 @@
+﻿@model IEnumerable<jwellerProject.Models.SubCategory>;
+<head>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-ocean-blue.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/cultures/kendo.culture.en-IN.min.js"></script>
+
+</head>
+<body>
+    <script type="text/kendo-x-tmpl" id="template">
+        <div class="Shop" style="border:2px solid">
+            <img src="data:image/*;base64,#:image#" height="50" width="50"></img>
+            <h3>#:name#</h3>
+            <p>#:kendo.toString(price, "c")# </p>
+            <div class="button">
+            <button  class="add-to-cart" asp-controller="View" asp-action="" data-id="#:id#">Add to Cart</button>
+            <button class="buy-now"  data-id="#:id#">Buy Now</button>
+            </div>
+         </div>
+    </script>
+    <div id="listView"></div>
+    <script>
+        kendo.culture("en-IN");
+        $("#listView").kendoListView({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/View/Data/",
+                        dataType: "json",
+
+                    }
+                },
+                schema: {
+                    model: {
+                        id: "id",
+                        fields: {
+                            id: { type: "number" },
+                            name: { type: "string" },
+                            price: { type: "number" },
+                            image: { type: "string" }
+                        }
+                    }
+                }
+            },
+            template: kendo.template($("#template").html())
+        });      
+    </script>
+    <style>
+        #listView {
+            padding: 10px 5px;
+            margin-bottom: -1px;
+            min-height: 550px;
+            font: inherit;
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .k-listview-content {
+            overflow: hidden;
+        }
+
+        .Shop {
+            float: left;
+            position: relative;
+            width: 250px;
+            height: 300px;
+            margin: 0 5px;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+            .Shop img {
+                width: 247px;
+                height: 170px;
+            }
+
+            .Shop h3 {
+                margin: 0;
+                padding: 3px 5px 0 0;
+                max-width: 96px;
+                line-height: 1.1em;
+                font-size: .9em;
+                font-weight: normal;
+                text-transform: uppercase;
+                color: #999;
+                margin: 0 10px 10px 0;
+                padding: 5px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+        .button {
+            margin: 0 5px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+    </style>
+
+</body>

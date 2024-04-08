@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<!-- Add the Kendo library by either using the JAVASCRIPT MODULES -->
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+
+<!-- OR by using the BUNDLED JAVASCRIPT -->
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+
+<div id="listView"></div>
+<body>
+
+
+    <div id="listView"></div>
+
+    <script type="text/x-kendo-template" id="template">
+        <div class="product">
+            <img src="https://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg" alt="Kendo UI for jQuery ListView #: ProductName #" />
+            <h3>Product Name</h3>
+            <p>#:ProductName#</p>
+            <h3>Price</h3>
+            <p>#:kendo.toString(UnitPrice, "c")#</p>
+        </div>
+    </script>
+
+    <script>
+        var products = [{
+            ProductID: 1,
+            ProductName: "Chai",
+            UnitPrice: 18.0000
+        }, {
+            ProductID: 2,
+            ProductName: "Chang",
+            UnitPrice: 19.0000
+        }, {
+            ProductID: 3,
+            ProductName: "Aniseed Syrup",
+            UnitPrice: 10.0000
+        }, {
+            ProductID: 4,
+            ProductName: "Chef Anton's Cajun Seasoning",
+            UnitPrice: 22.0000
+        }, {
+            ProductID: 5,
+            ProductName: "Chef Anton's Gumbo Mix",
+            UnitPrice: 21.3500
+        }, {
+            ProductID: 6,
+            ProductName: "Grandma's Boysenberry Spread",
+            UnitPrice: 25.0000,
+        }, {
+            ProductID: 7,
+            ProductName: "Uncle Bob's Organic Dried Pears",
+            UnitPrice: 30.0000
+        }, {
+            ProductID: 8,
+            ProductName: "Northwoods Cranberry Sauce",
+            UnitPrice: 40.0000
+        }, {
+            ProductID: 9,
+            ProductName: "Mishi Kobe Niku",
+            UnitPrice: 97.0000
+        }, {
+            ProductID: 10,
+            ProductName: "Ikura",
+            UnitPrice: 31.0000
+        }, {
+            ProductID: 11,
+            ProductName: "Queso Cabrales",
+            UnitPrice: 21.0000
+        }, {
+            ProductID: 12,
+            ProductName: "Queso Manchego La Pastora",
+            UnitPrice: 38.0000
+        }, {
+            ProductID: 13,
+            ProductName: "Konbu",
+            UnitPrice: 6.0000
+        }, {
+            ProductID: 14,
+            ProductName: "Tofu",
+            UnitPrice: 23.2500
+        }, {
+            ProductID: 15,
+            ProductName: "Genen Shouyu",
+            UnitPrice: 15.5000
+        }];
+
+        $(function () {
+            $("#listView").kendoListView({
+                dataSource: {
+                    data: products,
+                    pageSize: 5
+                },
+                template: kendo.template($("#template").html()),
+                pageable: true,
+                scrollable: true,
+                height: 400
+            });
+        });
+    </script>
+</body>

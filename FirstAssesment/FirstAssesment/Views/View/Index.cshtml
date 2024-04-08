@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   
+</head>
+<body>   
+
+    <div class="button">
+        <a type="button" class="btn btn-white" asp-controller="View" asp-action="GetData">Gold</a>
+        <a type="button" class="btn btn-white" asp-controller="View" asp-action="GetSilver">Silver</a>
+        <a type="button" class="btn btn-white" asp-controller="View" asp-action="">More</a>
+        
+    </div>    
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.shilpalifestyle.com/assets/home-slider/home_slider_HOME_PAGE_-21.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.shilpalifestyle.com/assets/home-slider/home_slider_HOME_PAGE_-3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://en.idei.club/uploads/posts/2023-06/1686410724_en-idei-club-p-jewellery-background-dizain-11.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="bi bi-tags"></i>BEST
+                        DESIGNS
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex">
+                        <i class="bi bi-award"></i>CERTIFIED
+                        JEWELLERY
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="bi bi-truck"></i>
+                        FREE DELIVERY
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="bi bi-check2-circle"></i>EASY
+                        EXCHANGE
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <style>
+        .navbar {
+            background-image: url('https://t4.ftcdn.net/jpg/06/33/38/97/240_F_633389765_e91XbArkZoGBDCAl8JCsSppcI8TALRer.jpg');
+            background-size: cover;
+            background-position: center;
+            color: black;
+            width: 100vw;
+        }
+
+        .nav-link {
+            display: block;
+            padding: .5rem 1rem;
+            color: black;
+            font-size: 25px;
+        }   
+    </style>
+</body>
+</html>
+

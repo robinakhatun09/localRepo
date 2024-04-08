@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\grid2.props" />
+</Project>

@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+body {
+    width:100%;
+    
+}
+.container {
+    margin-top: 20px;
+    background-color:#eee;
+}
+
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+
+}
+
+body {
+  margin-bottom: 60px;
+ 
+}
+.table-striped{
+    border:black;
+}
+
+

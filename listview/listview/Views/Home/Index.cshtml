@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<head>
+<link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.3.1114/js/cultures/kendo.culture.en-IN.min.js"></script>
+</head>
+<body>
+<div id="listView" class="m-5"></div>
+
+<div class="" id="mediaplayer" style="height:360px" ></div>
+
+<script type="text/x-kendo-template" id="template">
+    <div class="book">
+        <h3>Book Name</h3>
+        <p>#:BookName#</p>
+        
+        <h3>Price</h3>
+        <p>#:kendo.toString(UnitPrice, "c")# </p>
+    </div>
+</script>
+
+<script>
+  
+    var books = [{
+        BookID: 1,
+        BookName: "The Great Gatsby",
+        UnitPrice: 18.0000
+    }, {
+        BookID: 2,
+        BookName: "To Kill a Mockingbird",
+        UnitPrice: 19.0000
+    }, {
+        BookID: 3,
+        BookName: "Frankenstein",
+        UnitPrice: 10.0000
+    }, {
+        BookID: 4,
+        BookName: "Brave New World",
+        UnitPrice: 22.0000
+    }, {
+        BooktID: 5,
+        BookName: "David Copperfield",
+        UnitPrice: 21.3500
+    }, {
+        BookID: 6,
+        BookName: "Lord of the Flies",
+        UnitPrice: 25.0000,
+    }, {
+        BookID: 7,
+        BookName: "Crime and Punishment",
+        UnitPrice: 30.0000
+    }, {
+        BookID: 8,
+        BookName: "Catch-22",
+        UnitPrice: 40.0000
+    }, {
+        BookID: 9,
+        BookName: "Wuthering Heights",
+        UnitPrice: 97.0000
+    }, {
+        BookID: 10,
+        BookName: "Jane Eyre",
+        UnitPrice: 31.0000
+    }, {
+        BookID: 11,
+        BookName: "The Catcher in the Rye",
+        UnitPrice: 21.0000
+    }, {
+        BookID: 12,
+        BookName: "Don Quixote",
+        UnitPrice: 38.0000
+    }, {
+        BookID: 13,
+        BookName: "The Lord of the Rings",
+        UnitPrice: 6.0000
+    }, {
+        BookID: 14,
+        BookName: "Jane Eyre",
+        UnitPrice: 23.2500
+    }, {
+        BookID: 15,
+        BookName: "Nineteen Eighty-Four",
+        UnitPrice: 15.5000
+    }];
+    $("#mediaplayer").kendoMediaPlayer({
+        // autoPlay: true,
+        navigatable: true,
+        media: {
+            title: "ProgressNEXT 2019 Highlights",
+            source: "https://www.youtube.com/watch?v=wktBd7OmYHs"
+        }
+    });
+    $(function () {
+        //change culture price
+        kendo.culture("en-IN");
+        $("#listView").kendoListView({
+            dataSource: {
+                data: books,
+                pageSize:3
+            },
+            template: kendo.template($("#template").html()),
+            pageable: true,
+            scrollable: true,
+            height: 400
+        });
+    });
+    
+</script>
+</body>

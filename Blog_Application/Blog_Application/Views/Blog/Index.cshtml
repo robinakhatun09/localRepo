@@ -1,0 +1,59 @@
+﻿@model Blog_Application.Models.BlogPosts
+<html>
+<head>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/6.7.0/default/default-ocean-blue.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="BlogGrid"></div>
+    <script>
+      
+            $("#BlogGrid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "/Blog/GetData",
+                            dataType: "json"
+                        },
+                        create: {
+                            url: "/Blog/Create",
+                            dataType: "json"
+                        },
+                        update: {
+                            url: "/Blog/Edit",
+                            dataType: "json"
+                        },
+                        destroy: {
+                            url: "/Blog/Delete",
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "id", 
+                            fields: {
+                                title: { type: "string" },
+                                content: { type: "string" },
+                                dateCreated: { type: "date" }, 
+                                dateModified: { type: "date" }
+                            }
+                        }
+                    },
+                    pageSize: 10
+                },
+                editable: "popup",
+                pageable: true,
+                toolbar: ["create","pdf", "excel", "search"],
+                columns: [
+                    { field: "title", title: "Title" },
+                    { field: "content", title: "Content", width: "220px" },
+                    { field: "dateCreated", title: "DateCreated"},
+                    { field: "dateModified", title: "DateModified" },
+                    { command: ["destroy", "edit"] }
+                ]
+            });
+ 
+    </script>
+</body>
+</html>

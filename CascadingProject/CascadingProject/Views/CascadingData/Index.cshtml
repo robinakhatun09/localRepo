@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js" type="module"></script>
+</head>
+<body>
+            <div class="col-6 offset-3">
+                <div class="form-group">
+                    <label>Country</label>
+                    <input  id="Country"/>                   
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <input  id="State"/>                   
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input id="City"/>                     
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" id="submit">Show Data</button>
+            </div>
+    <script>
+        $(document).ready(function () {
+            var Countries = $("#Country").kendoDropDownList({
+                optionLabel: "Select Country...",
+                dataTextField: "name",
+                dataValueField: "id",
+                dataSource: {
+                    dataType: "json",
+                    transport: {
+                        read: "/CascadingData/CountryData"
+                    }
+                }
+            }).data("kendoDropDownList");
+
+            var States = $("#State").kendoDropDownList({
+                cascadeFrom: "Country",
+                optionLabel: "Select State...",
+                dataTextField: "name",
+                dataValueField: "id",               
+                    dataSource: {
+                    dataType: "json",
+                    serverFiltering: true,
+                    transport: {
+                        read: {
+                            url: "/CascadingData/StateData",
+                            data: function () {
+                                return {
+                                    id:Countries.value()
+                                };
+                            }
+                        }
+                    }
+                }
+            }).data("kendoDropDownList");
+
+            var Cities = $("#City").kendoDropDownList({
+                cascadeFrom: "State",
+                optionLabel: "Select City...",
+                dataTextField: "name",
+                dataValueField: "id",
+                dataSource: {
+                    dataType: "json",
+                    serverFiltering: true,
+                    transport: {
+                        read: {
+                            url: "/CascadingData/CityData",
+                            data: function () {
+                                return {
+                                    id: States.value()
+                                };
+                            }
+                        }
+                    }
+                }
+            }).data("kendoDropDownList");
+
+            $("#submit").click(function () {
+                var countryInfo = "\nCountry: {  name: " + Countries.text() + " }",
+                    stateInfo = "\nState: {  name: " + States.text() + " }",
+                    cityInfo = "\nCity: {  name: " + Cities.text() + " }";
+
+                alert("details:\n" + countryInfo + stateInfo + cityInfo);
+            });
+        });
+              
+    </script>
+</body>
+</html>

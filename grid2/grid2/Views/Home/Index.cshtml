@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/mjs/kendo.all.js" type="module"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+
+</head>
+<body>
+
+
+    <div id="grid"></div>
+    <script>
+        $(document).ready(function () {
+
+            $("#grid").kendoGrid({
+                columns: [{
+                    title: " Name", field: "Name"
+                },
+                { title: "Email", field: "Email" },
+                {
+                    title: "City", field: "city"
+                }
+
+                ],
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "  "
+                        }
+                    },
+                    schema: {
+                        data:"data",
+                       
+                    },
+                    pageSize: 5
+                },
+                height: 300,
+                scrollable: true,
+                pageable: true,
+                sortable: true
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>

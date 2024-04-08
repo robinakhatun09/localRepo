@@ -1,0 +1,11 @@
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\bin\Debug\net6.0\BuissnessObjectLayer.deps.json
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\bin\Debug\net6.0\BuissnessObjectLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\bin\Debug\net6.0\BuissnessObjectLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.AssemblyInfo.cs
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\refint\BuissnessObjectLayer.dll
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\BuissnessObjectLayer.pdb
+C:\Users\rubin\source\repos\CustomerPortal\BuissnessObjectLayer\obj\Debug\net6.0\ref\BuissnessObjectLayer.dll

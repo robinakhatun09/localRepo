@@ -1,0 +1,30 @@
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\appsettings.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.staticwebassets.runtime.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.exe
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.deps.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.runtimeconfig.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.dll
+C:\Users\rubin\source\repos\kendo web2\kendo web2\bin\Debug\net6.0\kendo web2.pdb
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.AssemblyInfoInputs.cache
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.AssemblyInfo.cs
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.csproj.CoreCompileInputs.cache
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.RazorAssemblyInfo.cache
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.RazorAssemblyInfo.cs
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets\msbuild.kendo web2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets\msbuild.build.kendo web2.props
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.kendo web2.props
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.kendo web2.props
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\scopedcss\bundle\kendo web2.styles.css
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\scopedcss\projectbundle\kendo web2.bundle.scp.css
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.dll
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\refint\kendo web2.dll
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.pdb
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\kendo web2.genruntimeconfig.cache
+C:\Users\rubin\source\repos\kendo web2\kendo web2\obj\Debug\net6.0\ref\kendo web2.dll
